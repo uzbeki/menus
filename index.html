@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=9259bfb3-5cd4-464f-8573-37338b5f5225&lang=en_US"
+        type="text/javascript">
+        </script>
+
+    <title>MenuUz Concept</title>
+</head>
+
+<body>
+    <!-- qidiruv bar -->
+    <div class="search-bar">
+        <input type="text" name="" class="search-txt" placeholder="bu yerga yozing..." />
+        <a class="search-btn">
+            <img src="search.svg" alt="qidiruv">
+        </a>
+    </div>
+
+    <header class="nom"> Yaqiningizdagi restoranlar </header>
+
+    <section id="kartalar">
+        <div class="restorant" >
+            
+            <h1> <img src="/pics/ewmat.jpg" alt="Eshmat"> Eshmat Aka </h1>
+            <p> Eshmat aka restorani eng mazali o'zbek taomlari siz uchun. My mother is visiting me in Japan on July
+                30th, 2019. Her full name is Mrs. Yarasheva Gulchiroy. </p>
+            <ul> Taniqli taomlar:
+                <li>Shashlik</li>
+                <li>Manti</li>
+                <li>Osh</li>
+                <li>Palov</li>
+            </ul>
+        </div>
+
+        <div class="restorant">
+            <h1> <img src="/pics/musha.jpg" alt="Musha"> Musha </h1>
+            <p> Mushada lumlumjon pishirgan ovqatladan maza qilamoto My mother is visiting me in Japan on July 30th,
+                2019. Her full name is Mrs. Yarasheva Gulchiroy. She has never been abroad before, nor knows any
+                language other than Uzbek. </p>
+            <ul> Taniqli taomlar:
+                <li>Tuxumbarak</li>
+                <li>Jag'ar-jug'ur</li>
+                <li>Pizza</li>
+                <li>Pilmenillo</li>
+            </ul>
+        </div>
+        <div class="restorant">
+            <h1> <img src="/pics/hamid.jpg" alt="Hamid"> Hamid </h1>
+            <p> Hamid aka ovqat pishirishini shaqqilatadilar. keling My mother is visiting me in Japan on July 30th,
+                2019. Her full name is Mrs. Yarasheva Gulchiroy. She has never been abroad before. </p>
+            <ul> Taniqli taomlar:
+                <li>Shashlik</li>
+                <li>Sho'rva</li>
+                <li>Somsa</li>
+                <li>Lag'mon</li>
+            </ul>
+        </div>
+        <div class="restorant">
+            <h1> <img src="/pics/nastarin.jpg" alt="nastarin"> Nastarin </h1>
+            <p> Siz sevgan taomxonaMy mother is visiting me in Japan on July 30th, 2019. Her full name is Mrs. Yarasheva
+                Gulchiroy. She has never been abroad before, nor knows any language other than Uzbek. </p>
+            <ul> Taniqli taomlar:
+                <li>G'elak sho'rva</li>
+                <li>Golubsi</li>
+                <li>Norin</li>
+                <li>Dimlama</li>
+            </ul>
+        </div>
+        <div class="restorant">
+            <h1> <img src="/pics/alpari.jpg" alt="Alpari"> Alpari </h1>
+            <p> Milliychiligimizni saqlab qolgan holda, taomlardan bahramand bo'ling My mother is visiting me in Japan
+                on July 30th, 2019. Her full name is Mrs. Yarasheva Gulchiroy. She has never been abroad before, nor
+                knows any language other than Uzbek. </p>
+            <ul> Taniqli taomlar:
+                <li>Halisa</li>
+                <li>Tovuq sho'rva</li>
+                <li>Lag'mon</li>
+                <li>Tandiri</li>
+            </ul>
+        </div>
+        <div class="restorant">
+            <h1> <img src="/pics/alpari.jpg" alt="Alpari"> Chinor </h1>
+            <p> baskjbahpdabo;d xskj hsjkndp'akonsc kas clhjas clakj sl;as chjkabnlcka slohvj abl;'sc souybv
+                ;'asbciassnkc kxj puis vosdbnlp;amns cjas </p>
+            <ul> Taniqli taomlar:
+                <li>Halisa</li>
+                <li>Tovuq sho'rva</li>
+                <li>Lag'mon</li>
+                <li>Tandiri</li>
+            </ul>
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+  <div class="footer_wrapper">
+        <footer>
+            <ul>
+                <li> <a href="about.html" target="_blank">About us</a> </li>
+                <li> <a href="careers.html" target="_blank">Careers</a> </li>
+                <li> <a href="terms.html" target="_blank">Terms & Conditions</a> </li>
+                <li> <a href="map.html" target="_blank">Site Map</a> </li>
+                <li> <a href="privacy.html" target="_blank">Cookies, Privacy and Security</a> </li>
+                <li> <a href="contact.html" target="_blank">Contact us</a> </li>
+                
+            </ul>
+            <br>
+            <p class="footer_p">Copyright 2019. All rights reserved.</p>
+        </footer>
+    </div>
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- svg muammo bor  -->
+    <!-- <p id="rasmcha">
+<img src="People Eating At Restaurant 2.svg" alt="yeyishopti">
+</p> -->
+
+    <!-- yandex map container -->
+    <div id="map" style="width: 600px; height: 400px"></div>
+
+    <script type="text/javascript">
+        // The ymaps.ready() function will be called when
+        // all the API components are loaded and the DOM tree is generated.
+        ymaps.ready(init);
+        function init() {
+            // Creating the map.    
+            var myMap = new ymaps.Map("map", {
+                // The map center coordinates.
+                // Default order: “latitude, longitude”.
+                // To not manually determine the map center coordinates,
+                // use the Coordinate detection tool.
+                center: [40.022882, 64.516869],
+                // Zoom level. Acceptable values:
+                // from 0 (the entire world) to 19.
+                zoom: 9
+            });
+        }
+
+    </script>
+
+
+</body>
+ 
+
+</html>
+
+
+
+
+
+
+
+
+<!-- lagmon, mastava, gelakillo, golubsi, moshkichiri, garnir, grechka, makaron shurvo, kabob, tandir kabob, norin, ko'za sho'rva,  -->
